@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <header>
-       <div class="nav-links">
-        <ul>
-            <li>Home</li>
-            <li>Order</li>
-            <li>Food</li>
-            <li>Restaurant</li>
-            <li>Testimonials</li>
-            <li>Contact us</li>
-            <div class="icons">
-                <span></span>
-                <span></span>
-            </div>
-        </ul>
-       </div>
-       <!-- <div class="icons">
-        <span></span>
-        <span></span>
-       </div> -->
+        <div class="nav-links">
+            <ul id="nav-items">
+                <a href="#home">
+                    <li>Home</li>
+                </a>
+                <a href="#order">
+                    <li>Order</li>
+                </a>
+                <li>Food</li>
+                <li>Restaurant</li>
+                <li>Testimonials</li>
+                <li>Contact us</li>
+                <div class="icons">
+                    <span><i class="fa-solid fa-phone"></i></span>
+                    <span><i class="fa-solid fa-cart-shopping"></i></span>
+                </div>
+            </ul>
+        </div>
+        <span onclick="toggle()" class="toggle-button"><i class="fa-solid fa-bars"></i></span>
     </header>
-    
-    <section class="banner">
+
+    <section id="home" class="banner-section">
         <div class="banner-content">
-            <div class="banner-card"></div>
-            <h2>LOREM IPSUM</h2>
-            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a gallery of type and scrambled it to make a type specimen book.</p>
+            <h2>Lorem ipsum</h2>
+            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                took a gallery of type and scrambled it to make a type specimen book.</p>
         </div>
     </section>
 
-    <section class="order">
+    <section id="order" class="order-section">
         <h1>Order Now</h1>
         <div class="card-row">
-
             <div class="card">
                 <img src="assets/images/img4.jpg" alt="">
                 <p class="card-title">Burger</p>
                 <p class="card-text">Lorem Ipsum has been the industry's standard dummy text</p>
             </div>
-            
             <div class="card">
                 <img src="assets/images/img2.jpg" alt="">
                 <p class="card-title">Pizza</p>
                 <p class="card-text">Lorem Ipsum has been the industry's standard dummy text</p>
             </div>
-            
-
-
             <div class="card">
                 <img src="assets/images/img3.jpg" alt="">
                 <p class="card-title">Pasta</p>
@@ -63,5 +62,7 @@
         </div>
         <button>Order</button>
     </section>
+    <script src="script.js"></script>
 </body>
+
 </html>

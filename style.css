@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -31,37 +31,39 @@ header {
 
 .nav-links li {
     list-style: none;
+    cursor: pointer;
 }
 
-.icons{
+.nav-links a {
+    text-decoration: none;
+    color: black;
+}
+
+.icons {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     position: absolute;
     right: 20px;
 }
 
-.icons span{
-    width: 20px;
-    height: 20px;
-    border: 1px solid;
-    border-radius: 50%;
+.icons span {
+    cursor: pointer;
 }
 
-/* .icons span{
-    align-self: flex-end;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    background-color: blue;
-    border: 1px solid;
-} */
+.toggle-button {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 25px;
+    cursor: pointer;
+}
 
-.banner {
+.banner-section {
     width: 100%;
-    /* height: 500px;
-     */
     height: 100vh;
     background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
     background-image: url('assets/images/img1.jpg');
     padding: 100px;
@@ -71,55 +73,38 @@ header {
 
 
 .banner-content {
-    /* color: #FFFFFF;
-     */
-     color: black;
-    /* padding: 30px; */
-    width: 450px;
-    position: relative;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 500px;
+    background: rgba(255, 0, 0, 0.3)
 }
 
-.banner-card {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: cyan;
-    opacity: .5;
-    padding: 30px;
+
+.banner-section h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
 }
 
-.banner h2 {
-    margin: 20px;
-    font-size: 2rem;
+.banner-section p {
+    font-size: 14px;
+    font-weight: 300;
+    width: 390px;
 }
 
-.banner p {
-    width: 365px;
-    margin: 20px;
-}
-
-.order {
+.order-section {
     width: 100%;
     background: bisque;
-    background: linear-gradient(90deg,rgba(204,109,196,1)0%,
-    rgba(234,128,128,1)53%,
-    rgba(213,187,49,1)100%
-    );
-    /* height: 300px; */
-    height: 100vh;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center; */
+    background: linear-gradient(90deg, rgba(204, 109, 196, 1)0%,
+            rgba(234, 128, 128, 1)53%,
+            rgba(213, 187, 49, 1)100%);
     text-align: center;
     padding-top: 30px;
 }
 
 
-.order h1 {
-    font-size: 2rem;
+.order-section h1 {
+    font-size: 2.3rem;
     letter-spacing: 3px;
-    font-weight: 700;
     color: #FFFFFF;
 }
 
@@ -138,12 +123,18 @@ header {
     border-radius: 0 40px 0 40px;
     background: white;
     text-align: center;
+    transition: .3s ease-in-out;
+    cursor: pointer;
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     border-top-right-radius: 40px;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card-title {
@@ -154,18 +145,100 @@ header {
 }
 
 .card-text {
-    font-size: 12px;
+    font-size: 11px;
     margin-top: 9px;
 }
 
-.order button {
+.order-section button {
     margin-top: 60px;
-    width: 130px;
+    width: 140px;
     padding: 12px;
     text-align: center;
     border-radius: 30px;
     border: none;
     background-color: #E5E5E5;
+    background: rgba(255, 255, 255, 0.3);
     font-size: 13px;
     font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+@media (min-width:768px) and (max-width:930px) {
+    header {
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+
+    .nav-links ul {
+        gap: 35px;
+    }
+}
+
+@media (max-width:900px) {
+    .card-row {
+        gap: 25px;
+    }
+}
+
+
+@media (max-width:768px) {
+    .nav-links ul {
+        flex-direction: column;
+        gap: 30px;
+        position: fixed;
+        top: 49px;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        background: #FFFFFF;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+        padding: 40px 0 0 12px;
+        transition: all .3s ease-in-out;
+    }
+
+    .icons {
+        position: static;
+    }
+
+    .toggle-button {
+        display: block;
+    }
+
+    .card-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 380px;
+        padding: 10px;
+    }
+
+    .card img {
+        width: 80%;
+    }
+
+    .banner-section {
+        height: 500px;
+        padding: 15px;
+    }
+
+    .banner-content {
+        width: 300px;
+    }
+
+    .banner-section h2 {
+        font-size: 25px;
+    }
+
+    .banner-section p {
+        width: 100%;
+    }
+}
+
+@media (max-width:420px) {
+    .card {
+        width: 280px;
+    }
 }
